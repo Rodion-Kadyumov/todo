@@ -1,0 +1,30 @@
+@use '../../styles/colors' as v;
+
+.button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 2px;
+  border: 2px solid transparent;;
+  background-color: white;
+  color: v.$textColor;
+
+  & + button {
+    margin-left: 12px;
+  }
+}
+
+.active {
+  background-color: tomato;
+}
+
+.accent {
+  background-color: v.$accent;
+}
+
+.accent:hover {
+  opacity: 0.8;
+}
+.accent:active {
+  border: 2px solid v.$accent;
+  background-color: white;
+}
