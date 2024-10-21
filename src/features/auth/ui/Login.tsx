@@ -1,28 +1,28 @@
-import React from 'react';
-import Grid from '@mui/material/Grid';
-import Checkbox from '@mui/material/Checkbox';
-import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormGroup from '@mui/material/FormGroup';
-import FormLabel from '@mui/material/FormLabel';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import { useFormik } from 'formik';
-import { useAppDispatch } from '../../../app/store';
-import { Navigate } from 'react-router-dom';
-import { PATH } from '../../../common/routes/PATH';
-import { useSelector } from 'react-redux';
-import { login, selectIsLoggedIn } from '../model/authSlice';
-import { LoginParams } from '../api/authAPI.types';
+import React from 'react'
+import Grid from '@mui/material/Grid'
+import Checkbox from '@mui/material/Checkbox'
+import FormControl from '@mui/material/FormControl'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import FormGroup from '@mui/material/FormGroup'
+import FormLabel from '@mui/material/FormLabel'
+import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
+import { useFormik } from 'formik'
+import { useAppDispatch } from '../../../app/store'
+import { Navigate } from 'react-router-dom'
+import { PATH } from '../../../common/routes/PATH'
+import { useSelector } from 'react-redux'
+import { login, selectIsLoggedIn } from '../model/authSlice'
+import { LoginParams } from '../api/authAPI.types'
 
 type ErrorsType = {
-  email?: string;
-  password?: string;
-};
+  email?: string
+  password?: string
+}
 
 export const Login = () => {
-  const dispatch = useAppDispatch();
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const dispatch = useAppDispatch()
+  const isLoggedIn = useSelector(selectIsLoggedIn)
 
   const formik = useFormik({
     initialValues: {
@@ -31,26 +31,24 @@ export const Login = () => {
       rememberMe: false,
     },
     validate: (values) => {
-      const errors: ErrorsType = {};
+      const errors: ErrorsType = {}
       if (!values.email) {
-        errors.email = 'Required email';
+        errors.email = 'Required email'
       } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-        errors.email = 'Invalid email address';
+        errors.email = 'Invalid email address'
       }
       if (!values.password) {
-        errors.password = 'Required pass';
+        errors.password = 'Required pass'
       }
-      return errors;
+      return errors
     },
     onSubmit: (values: LoginParams) => {
-      dispatch(login(values));
-      //alert(JSON.stringify(values, null, 2))
-      //formik.resetForm()
+      dispatch(login(values))
     },
-  });
+  })
 
   if (isLoggedIn) {
-    return <Navigate to={PATH.TODOLISTS} />;
+    return <Navigate to={PATH.TODOLISTS} />
   }
 
   return (
@@ -92,5 +90,5 @@ export const Login = () => {
         </form>
       </Grid>
     </Grid>
-  );
-};
+  )
+}

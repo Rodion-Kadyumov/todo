@@ -2,7 +2,6 @@ import { ChangeEvent, useState } from 'react'
 import * as React from 'react'
 
 export const useItemForm = (addItem: (name: string) => void) => {
-  //local state - not business tasks
   let [itemTitle, setNewItemTitle] = useState('')
   let [itemInputError, setItemInputError] = useState<string | null>(null)
 

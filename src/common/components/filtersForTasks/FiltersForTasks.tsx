@@ -1,14 +1,13 @@
-// @flow
-import * as React from 'react';
-import { ButtonMemo } from '../button/ButtonMemo';
-import Box from '@mui/material/Box';
-import { FilterValuesType } from '../../data/dataPropsTypes';
-import { filterButtonsContainerSx } from '../../../features/todolistList/todolist/Todolist.styles';
+import * as React from 'react'
+import { ButtonMemo } from '../button/ButtonMemo'
+import Box from '@mui/material/Box'
+import { FilterValuesType } from '../../data/dataPropsTypes'
+import { filterButtonsContainerSx } from '../../../features/todolistList/todolist/Todolist.styles'
 
 type FiltersForTasksProps = {
-  filter: FilterValuesType;
-  filterCheck: (filter: FilterValuesType) => () => void;
-};
+  filter: FilterValuesType
+  filterCheck: (filter: FilterValuesType) => () => void
+}
 export const FiltersForTasks = ({ filter, filterCheck }: FiltersForTasksProps) => {
   return (
     <Box sx={filterButtonsContainerSx}>
@@ -31,5 +30,5 @@ export const FiltersForTasks = ({ filter, filterCheck }: FiltersForTasksProps) =
         completed
       </ButtonMemo>
     </Box>
-  );
-};
+  )
+}

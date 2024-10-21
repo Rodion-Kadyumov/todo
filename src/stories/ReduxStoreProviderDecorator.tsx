@@ -1,23 +1,23 @@
-import { Provider } from 'react-redux';
-import { applyMiddleware, combineReducers, legacy_createStore } from 'redux';
-import { todolistsReducer } from '../features/todolistList/model/todolistsSlice';
-import { tasksReducer } from '../features/todolistList/model/tasksSlice';
-import React from 'react';
-import { thunk } from 'redux-thunk';
-import { appReducer } from '../app/reducers/appSlice';
-import { authReducer } from '../features/auth/model/authSlice';
-import { RouterProvider } from 'react-router-dom';
-import { router } from '../common/routes/router';
-import { TaskStatuses, TodoTaskPriorities } from '../common/enums/enums';
+import { Provider } from 'react-redux'
+import { applyMiddleware, combineReducers, legacy_createStore } from 'redux'
+import { todolistsReducer } from '../features/todolistList/model/todolistsSlice'
+import { tasksReducer } from '../features/todolistList/model/tasksSlice'
+import React from 'react'
+import { thunk } from 'redux-thunk'
+import { appReducer } from '../app/reducers/appSlice'
+import { authReducer } from '../features/auth/model/authSlice'
+import { RouterProvider } from 'react-router-dom'
+import { router } from '../common/routes/router'
+import { TaskStatuses, TodoTaskPriorities } from '../common/enums/enums'
 
 const rootReducer = combineReducers({
   todolists: todolistsReducer,
   tasks: tasksReducer,
   app: appReducer,
   auth: authReducer,
-});
+})
 
-type returnReducerType = ReturnType<typeof rootReducer>;
+type returnReducerType = ReturnType<typeof rootReducer>
 
 const initialGlobalState = {
   tasks: {
@@ -98,15 +98,14 @@ const initialGlobalState = {
   auth: {
     isLoggedIn: true,
   },
-} as returnReducerType;
+} as returnReducerType
 
-export const storybookStore = legacy_createStore(rootReducer, initialGlobalState as any, applyMiddleware(thunk));
+export const storybookStore = legacy_createStore(rootReducer, initialGlobalState as any, applyMiddleware(thunk))
 
 export const ReduxStoreProviderDecorator = (storyFn: () => React.ReactNode) => {
   return (
     <Provider store={storybookStore}>
       <RouterProvider router={router} />
-      {/*<MemoryRouter>{storyFn()}</MemoryRouter>*/}
     </Provider>
-  );
-};
+  )
+}

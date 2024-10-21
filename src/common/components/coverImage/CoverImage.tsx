@@ -1,20 +1,20 @@
 // @flow
-import * as React from 'react';
-import { ChangeEvent } from 'react';
-import defaultBg from '../../../assets/wmq7bl2c1xbsd8huyjbpwlmbesbvlzqv.jpg';
-import styles from './CoverImage.module.scss';
-import IconButton from '@mui/material/IconButton';
-import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
-import { CoverImageProps } from '../../data/dataPropsTypes';
+import * as React from 'react'
+import { ChangeEvent } from 'react'
+import defaultBg from '../../../assets/wmq7bl2c1xbsd8huyjbpwlmbesbvlzqv.jpg'
+import styles from './CoverImage.module.scss'
+import IconButton from '@mui/material/IconButton'
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate'
+import { CoverImageProps } from '../../data/dataPropsTypes'
 
 export const CoverImage = ({ image, updateImage }: CoverImageProps) => {
   const handleFileInput = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files ? e.target.files[0] : null;
+    const file = e.target.files ? e.target.files[0] : null
 
     if (file) {
-      updateImage(URL.createObjectURL(file));
+      updateImage(URL.createObjectURL(file))
     }
-  };
+  }
 
   return (
     <div className={styles.imgContainer}>
@@ -38,5 +38,5 @@ export const CoverImage = ({ image, updateImage }: CoverImageProps) => {
       </div>
       <img src={image ? image : defaultBg} className={styles.cover} alt={'Background image'} aria-hidden />
     </div>
-  );
-};
+  )
+}

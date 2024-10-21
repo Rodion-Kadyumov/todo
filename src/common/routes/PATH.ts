@@ -3,4 +3,4 @@ export const PATH = {
   LOGIN: '/auth',
   TODOLISTS: '/todolists',
   ERROR: '/errorPage',
-} as const;
+} as const

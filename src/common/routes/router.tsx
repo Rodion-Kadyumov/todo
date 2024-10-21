@@ -1,9 +1,9 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom';
-import App from '../../app/App';
-import { Login } from '../../features/auth/ui/Login';
-import { TodolistlistsContainer } from '../../features/todolistList/TodolistlistsContainer';
-import { PATH } from './PATH';
-import { ErrorPage } from '../../features/errorPage/ErrorPage';
+import { createBrowserRouter, Navigate } from 'react-router-dom'
+import App from '../../app/App'
+import { Login } from '../../features/auth/ui/Login'
+import { TodolistlistsContainer } from '../../features/todolistList/TodolistlistsContainer'
+import { PATH } from './PATH'
+import { ErrorPage } from '../../features/errorPage/ErrorPage'
 
 export const router = createBrowserRouter([
   {
@@ -33,4 +33,4 @@ export const router = createBrowserRouter([
     path: '/errorPage',
     element: <ErrorPage />,
   },
-]);
+])

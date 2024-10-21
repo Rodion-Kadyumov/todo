@@ -15,9 +15,4 @@ export default meta
 type Story = StoryObj<typeof App>
 
 export const AppWithProvider: Story = {
-  // render: () => (
-  //   <Provider store={storybookStore}>
-  //     <App />
-  //   </Provider>
-  // ),
 }

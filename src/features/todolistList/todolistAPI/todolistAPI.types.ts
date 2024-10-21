@@ -1,62 +1,62 @@
 //types
-import { TaskStatuses, TodoTaskPriorities } from '../../../common/enums/enums';
+import { TaskStatuses, TodoTaskPriorities } from '../../../common/enums/enums'
 
 export type AddTaskArgs = {
-  todolistId: string;
-  title: string;
-};
+  todolistId: string
+  title: string
+}
 
 export type DeleteTaskArgs = {
-  todolistId: string;
-  taskId: string;
-};
+  todolistId: string
+  taskId: string
+}
 
 export type UpdateTodolistTitle = {
-  todolistId: string;
-  title: string;
-};
+  todolistId: string
+  title: string
+}
 
 export type TodolistType = {
-  addedDate: string;
-  id: string;
-  order: number;
-  title: string;
-};
+  addedDate: string
+  id: string
+  order: number
+  title: string
+}
 
 export type TaskType = {
-  description: string;
-  title: string;
-  status: TaskStatuses;
-  priority: TodoTaskPriorities;
-  startDate: string;
-  deadline: string;
-  id: string;
-  todoListId: string;
-  order: number;
-  addedDate: string;
-};
+  description: string
+  title: string
+  status: TaskStatuses
+  priority: TodoTaskPriorities
+  startDate: string
+  deadline: string
+  id: string
+  todoListId: string
+  order: number
+  addedDate: string
+}
 export type UpdateTaskModelType = {
-  title: string;
-  description: string;
-  status: number;
-  priority: number;
-  startDate: string;
-  deadline: string;
-  addedDate: string;
-};
+  title: string
+  description: string
+  status: number
+  priority: number
+  startDate: string
+  deadline: string
+  addedDate: string
+}
 export type ResponseTypeGetTask = {
-  items: TaskType[];
-  totalCount: number;
-  error: string;
-};
+  items: TaskType[]
+  totalCount: number
+  error: string
+}
 
 export type ErrorResponseType = {
-  statusCode: number;
+  statusCode: number
   messages: [
     {
-      message: string;
-      field: string;
+      message: string
+      field: string
     },
-  ];
-  error: string;
-};
+  ]
+  error: string
+}

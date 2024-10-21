@@ -9,7 +9,6 @@ export const filterButtonsContainerSx: SxProps = {
 export const getListItemSx = (isDone: boolean | undefined): SxProps => ({
   p: 0,
   justifyContent: 'space-between',
-  // opacity: isDone ? 0.5 : 1,
   textDecoration: isDone ? 'line-through' : 'none',
   color: (theme) => (isDone ? 'grey' : 'inherit'),
 })

@@ -1,9 +1,9 @@
-import { TasksType, TodoListDomainType } from './dataPropsTypes';
-import { v1, v4 } from 'uuid';
-import { TaskStatuses, TodoTaskPriorities } from '../enums/enums';
+import { TasksType, TodoListDomainType } from './dataPropsTypes'
+import { v1, v4 } from 'uuid'
+import { TaskStatuses, TodoTaskPriorities } from '../enums/enums'
 
-export const todolistId1 = v4();
-export const todolistId2 = v4();
+export const todolistId1 = v4()
+export const todolistId2 = v4()
 
 export const tasksArr: TasksType = {
   [todolistId1]: [
@@ -94,9 +94,9 @@ export const tasksArr: TasksType = {
       deadline: '',
     },
   ],
-};
+}
 
 export const todoListsData: TodoListDomainType[] = [
   { id: todolistId1, title: 'What to learn', filter: 'all', addedDate: Date(), order: 0, entityStatus: 'idle' },
   { id: todolistId2, title: 'What to do', filter: 'all', addedDate: Date(), order: 0, entityStatus: 'idle' },
-];
+]

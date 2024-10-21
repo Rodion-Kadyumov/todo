@@ -1,1 +1,1 @@
-export type { ActionTypeForTest, BaseResponse } from './types';
+export type { ActionTypeForTest, BaseResponse } from './types'
