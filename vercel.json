@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "name": "nest",
+  "name": "todo",
   "builds": [
     {
-      "src": "/src/index.tsx",
+      "src": "./src/index.tsx",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/src/index.tsx"
+      "dest": "./src/index.tsx"
     }
   ]
 }
